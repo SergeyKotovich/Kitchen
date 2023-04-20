@@ -12,6 +12,12 @@ public class ObjectsInteractionTask5 : MonoBehaviour
         _shelf2.ItemSpawned += ItemsSpawned;
     }
 
+    private void OnDestroy()
+    {
+        _shelf1.ItemSpawned -= ItemsSpawned;
+        _shelf2.ItemSpawned -= ItemsSpawned;
+    }
+
     private void ItemsSpawned()
     {
         if (_shelf1.ItemsCount>=3)
